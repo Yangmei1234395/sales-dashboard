@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outlet performance</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Outlet performance</h1>
+      <div class="sub" id="range">Loading…</div>
+    </div>
+    <div class="filter" id="filter" role="group" aria-label="Filter by outlet"></div>
+  </header>
+
+  <section class="kpis">
+    <div class="card kpi accent"><div class="label">Total sales</div><div class="value" id="k-sales">–</div><div class="note" id="k-sales-n"></div></div>
+    <div class="card kpi"><div class="label">% of target</div><div class="value" id="k-pct">–</div><div class="note" id="k-pct-n"></div></div>
+    <div class="card kpi"><div class="label">Orders</div><div class="value" id="k-orders">–</div><div class="note" id="k-orders-n"></div></div>
+    <div class="card kpi"><div class="label">Returns %</div><div class="value" id="k-ret">–</div><div class="note" id="k-ret-n"></div></div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Sales vs target by outlet-week</h2>
+      <div class="hint">Bar length is sales as % of target. Red means below 90%.</div>
+      <div class="chart" id="chart"></div>
+      <div class="legend">
+        <span>On track (≥ 90%)</span>
+        <span class="l-low">Below 90%</span>
+        <span class="l-90">90%</span>
+        <span class="l-target">Target (100%)</span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Needs attention<span class="count" id="attn-count">0</span></h2>
+      <div class="hint">Outlet-weeks under 90% of target, worst first.</div>
+      <ul class="attn" id="attn"></ul>
+    </div>
+  </section>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
